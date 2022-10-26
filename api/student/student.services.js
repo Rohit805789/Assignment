@@ -49,7 +49,7 @@ function getStudentById(id,callback){
 function getStudentResult(data,callback){
 
     let q =`SELECT Name, sum(Mark1+Mark2+Mark3) as Total_Mark, `
-    q += `case when sum(Mark1+Mark2+Mark3) >= 100 then 'Pass' else 'Fail' end as Status `
+    q += `case when sum(Mark1+Mark2+Mark3) >= ? then 'Passed' else 'Failed' end as resultStatus `
     q += `FROM student_details group by Name`
 
     pool.query(q,
