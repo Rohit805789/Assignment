@@ -45,7 +45,7 @@ const getStudentDetails=(req,res)=>{
 }
 
 const getAllStudentResults =(req,res)=>{
-    getStudentResult(req.query.data,(err,results)=>{
+    getStudentResult(req.query.resultStatus,(err,results)=>{
         if(err){
             res.status(500).json({
                 status:500,
